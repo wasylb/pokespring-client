@@ -6,6 +6,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatCardModule} from "@angular/material/card";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 
@@ -18,7 +19,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatInputModule,
     MatSnackBarModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   exports: [
     CommonModule,
@@ -27,7 +29,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatInputModule,
     MatSnackBarModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FlexLayoutModule
   ]
 })
 export class CustomMaterialModule { }
