@@ -7,6 +7,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatCardModule} from "@angular/material/card";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 
@@ -20,7 +21,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule
   ],
   exports: [
     CommonModule,
@@ -30,7 +32,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule
   ]
 })
 export class CustomMaterialModule { }

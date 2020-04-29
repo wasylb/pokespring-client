@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from "./core/core.module";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {PokespringModule} from "./pokespring/pokespring.module";
-import {HomeComponent} from "./pokespring/home/home.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import {HomeComponent} from "./pokespring/home/home.component";
     BrowserAnimationsModule,
     CoreModule,
     PokespringModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
