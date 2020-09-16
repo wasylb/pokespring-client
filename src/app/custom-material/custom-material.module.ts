@@ -8,6 +8,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatIconModule} from "@angular/material/icon";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +24,10 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatCardModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
@@ -33,7 +38,10 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatCardModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CustomMaterialModule { }

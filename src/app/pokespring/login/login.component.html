@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <form class="loginForm" [formGroup]="this.fgLogin">
+    <img class="pikachuImg" src="../../../assets/general/pikachu-login.png">
+    <mat-form-field class="loginForm__field">
+      <mat-label>Login</mat-label>
+      <input formControlName="login" class="loginForm__input" matInput />
+    </mat-form-field>
+    <span class="formErrorMsg" *ngIf="fgLogin.get('login').errors &&
+           fgLogin.get('login').hasError('required') &&
+           fgLogin.get('login').touched">* Login is required.</span>
+    <mat-form-field class="loginForm__field">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" class="loginForm__input" matInput type="password" />
+    </mat-form-field>
+    <span class="formErrorMsg" *ngIf="fgLogin.get('password').errors &&
+           fgLogin.get('password').hasError('required') &&
+           fgLogin.get('password').touched">* Password is required.</span>
+    <button mat-icon-button class="loginForm__submit" type="submit" (click)="this.login()" [disabled]="this.fgLogin.invalid">
+      <mat-icon class="loginForm__submitBtn">vpn_key</mat-icon>
+    </button>
+  </form>
+</div>
