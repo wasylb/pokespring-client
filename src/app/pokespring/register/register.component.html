@@ -3,21 +3,71 @@
   <!-- <mat-form-field>
 
   </mat-form-field> -->
-  <form class="registerForm">
+  <form [formGroup]="this.fgRegister" class="registerForm">
     <span class="registerForm__header">Become a pokemon trainer!</span>
-    <mat-form-field>
-      <input matInput placeholder="Login"/>
+    <mat-form-field class="registerForm__field">
+      <input formControlName="login" matInput placeholder="Login"/>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Password" type="password"/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="E-mail" type="email"/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Login"/>
-    </mat-form-field>
-    <button color="accent" mat-stroked-button type="submit">Lets go!</button>
-  </form>
+    <span class="formErrorMsg" *ngIf="
+      fgRegister.get('login').errors &&
+      fgRegister.get('login').hasError('required') &&
+      fgRegister.get('login').touched">* Login is required.</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('login').errors &&
+      fgRegister.get('login').hasError('minlength') &&
+      fgRegister.get('login').touched">* Login is too short (min. 5 chars).</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('login').errors &&
+      fgRegister.get('login').hasError('maxlength') &&
+      fgRegister.get('login').touched">* Login is too long (max. 15 chars).</span>
 
+    <mat-form-field class="registerForm__field">
+      <input formControlName="password" matInput placeholder="Password" type="password"/>
+    </mat-form-field>
+    <span class="formErrorMsg" *ngIf="
+      fgRegister.get('password').errors &&
+      fgRegister.get('password').hasError('required') &&
+      fgRegister.get('password').touched">* Password is required.</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('password').errors &&
+      fgRegister.get('password').hasError('minlength') &&
+      fgRegister.get('password').touched">* Password is too short (min. 7 chars).</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('password').errors &&
+      fgRegister.get('password').hasError('maxlength') &&
+      fgRegister.get('password').touched">* Password is too long (max. 15 chars).</span>
+
+
+    <mat-form-field class="registerForm__field">
+      <input formControlName="email" matInput placeholder="E-mail" type="email"/>
+    </mat-form-field>
+    <span class="formErrorMsg" *ngIf="
+    fgRegister.get('email').errors &&
+    fgRegister.get('email').hasError('required') &&
+    fgRegister.get('email').touched">* Email is required.</span>
+    <span class="formErrorMsg" *ngIf="
+    fgRegister.get('email').errors &&
+    fgRegister.get('email').hasError('email') &&
+    fgRegister.get('email').touched">* Email format is incorrect.</span>
+
+
+    <mat-form-field class="registerForm__field">
+      <input formControlName="visibleName" matInput placeholder="Visible name"/>
+    </mat-form-field>
+    <span class="formErrorMsg" *ngIf="
+      fgRegister.get('visibleName').errors &&
+      fgRegister.get('visibleName').hasError('required') &&
+      fgRegister.get('visibleName').touched">* Visible name is required.</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('visibleName').errors &&
+      fgRegister.get('visibleName').hasError('minlength') &&
+      fgRegister.get('visibleName').touched">* Visible name is too short (min. 7 chars).</span>
+      <span class="formErrorMsg" *ngIf="
+      fgRegister.get('visibleName').errors &&
+      fgRegister.get('visibleName').hasError('maxlength') &&
+      fgRegister.get('visibleName').touched">* Visible name is too long (max. 15 chars).</span>
+
+
+    <button color="accent" mat-stroked-button type="submit" (click)="this.register()" [disabled]="this.fgRegister.invalid">Lets go!</button>
+  </form>
 </div>

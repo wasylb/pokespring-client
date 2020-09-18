@@ -9,7 +9,10 @@
       </div>
     </div>
     <div fxFlex></div>
-    <div class="menu-options" fxLayoutAlign="end end">
-      <button mat-button routerLinkActive="active" [routerLink]="['/pokedex']">Pokedex</button>
+    <div class="menu-option" fxLayoutAlign="end end">
+      <button color="warn" mat-raised-button routerLinkActive="active" [routerLink]="['/register']">Register</button>
+    </div>
+    <div class="menu-option" fxLayoutAlign="end end">
+      <button color="accent" mat-raised-button routerLinkActive="active" [routerLink]="['/login']">Log in</button>
     </div>
   </mat-toolbar>
