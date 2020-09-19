@@ -15,10 +15,11 @@ export class UserService {
   userUrl = '/users';
   loginAPIURL = '/login';
   registerAPIURL = '/register';
+  getUserAPIURL = '/users/user'
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(login: string, password: string): Observable<any> {
+  public login(login: string, password: string): Observable<UserToken> {
     return this.httpClient.post<UserToken>(environment.apiUrl + this.userUrl + this.loginAPIURL, {
       login,
       password
@@ -32,5 +33,11 @@ export class UserService {
       email,
       visibleName
     });
+  }
+
+  public getUser(id: string, token: string) {
+    return this.httpClient.get<User>(`${environment.apiUrl}${this.getUserAPIURL}/${id}`, {headers: {
+      'Authorization': `Bearer ${token}`
+    }});
   }
 }

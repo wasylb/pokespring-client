@@ -6,11 +6,12 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import {RouterModule} from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PokedexComponent, LoginComponent, RegisterComponent],
+  declarations: [HomeComponent, PokedexComponent, LoginComponent, RegisterComponent, NotAuthorizedComponent],
   imports: [
     CommonModule,
     CustomMaterialModule,

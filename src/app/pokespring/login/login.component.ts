@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/http/user.service';
 import { ApiError } from 'src/app/shared/models/api-error';
+import { AuthService } from 'src/app/core/http/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   fgLogin: FormGroup;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private authService: AuthService) {
     this.fgLogin = new FormGroup({
       login: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
@@ -26,6 +28,10 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(this.fgLogin.get('login').value, this.fgLogin.get('password').value).subscribe(user => {
       console.log(user);
+      this.authService.activeUser = user.user;
+      localStorage.setItem('userId', this.authService.activeUser.id);
+      localStorage.setItem('userToken', this.authService.activeUser.token);
+      console.log(this.authService.activeUser);
     }, error => {
       console.log(error as ApiError);
     });
