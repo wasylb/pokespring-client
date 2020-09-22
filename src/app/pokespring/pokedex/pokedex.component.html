@@ -1,6 +1,5 @@
-  <mat-grid-list id="wrapper" cols="3" fxLayoutAlign="center center">
-      <mat-grid-tile class="pokemon-tile" fxFlex *ngFor="let pokemon of pokemons">
-
+  <div class="wrapper">
+      <div class="pokemon-tile" *ngFor="let pokemon of pokemons">
           <mat-card class="pokemon-card">
             <mat-card-title class="pokemon-card-title">{{ pokemon.name }}</mat-card-title>
             <mat-card-content>
@@ -12,10 +11,10 @@
                 <p fxLayout="row" class="pokemon-attributes-attack"><img class="pokemon-attributes-icon" src="assets/general/attack.png"/>{{ pokemon.attack }}</p>
                 <p fxLayout="row" class="pokemon-attributes-defense"><img class="pokemon-attributes-icon" src="assets/general/defense.png"/>{{ pokemon.defense }}</p>
                 <p fxLayout="row" class="pokemon-attributes-speed"><img class="pokemon-attributes-icon" src="assets/general/speed.png"/>{{ pokemon.speed }}</p>
-
               </div>
             </mat-card-content>
           </mat-card>
-      </mat-grid-tile>
-  </mat-grid-list>
+        </div>
+  </div>
+
 

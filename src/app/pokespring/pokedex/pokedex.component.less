@@ -1,20 +1,27 @@
-#wrapper {
+
+.wrapper {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
 }
 
 #pokemon-collection {
 
 }
 
-.pokemon-tile > figure {
-  justify-content: flex-end !important;
-  align-items: flex-start !important;
-}
 
 .pokemon-card {
-  width: 40%;
+  width: 90%;
+  opacity: 0.7;
 
+}
+
+.pokemon-tile .pokemon-card:hover {
+  animation: slideUp ease-in-out 0.2s;
+  animation-fill-mode: forwards;
 }
 
 .pokemon-card-title {
@@ -43,4 +50,10 @@
 
 .pokemon-attributes-hp {
 
+}
+
+
+@keyframes slideUp {
+  from {opacity: 0.7;}
+  to {opacity: 1;}
 }
