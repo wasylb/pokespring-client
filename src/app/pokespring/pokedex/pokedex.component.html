@@ -1,8 +1,7 @@
   <div class="wrapper">
       <div class="pokemon-tile" *ngFor="let pokemon of pokemons">
-          <mat-card class="pokemon-card">
-            <mat-card-title class="pokemon-card-title">{{ pokemon.name }}</mat-card-title>
-            <mat-card-content>
+            <span class="pokemon-card-title">{{ pokemon.name }}</span>
+            <div>
               <div fxLayoutAlign="center center" class="pokemon-logo">
                 <img class="pokemon-img" src="assets/poke-avatars/{{pokemon.avatarUrl}}"/>
               </div>
@@ -12,9 +11,8 @@
                 <p fxLayout="row" class="pokemon-attributes-defense"><img class="pokemon-attributes-icon" src="assets/general/defense.png"/>{{ pokemon.defense }}</p>
                 <p fxLayout="row" class="pokemon-attributes-speed"><img class="pokemon-attributes-icon" src="assets/general/speed.png"/>{{ pokemon.speed }}</p>
               </div>
-            </mat-card-content>
-          </mat-card>
+            </div>
+          </div>
         </div>
-  </div>
 
 
