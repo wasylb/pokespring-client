@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +8,10 @@ import { CoreModule } from "./core/core.module";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {PokespringModule} from "./pokespring/pokespring.module";
 import {RouterModule} from "@angular/router";
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,14 @@ import {RouterModule} from "@angular/router";
     CoreModule,
     PokespringModule,
     FlexLayoutModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

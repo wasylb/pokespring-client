@@ -1,4 +1,5 @@
 export interface StatusData {
   status: string;
-  data: object;
+  message: string;
+  data?: any;
 }

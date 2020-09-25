@@ -9,7 +9,7 @@ import { NotAuthorizedComponent } from './pokespring/not-authorized/not-authoriz
 
 
 const routes: Routes = [
-  {path: 'home',canActivate: [AuthService], component: HomeComponent},
+  {path: 'home', canActivate: [AuthService], component: HomeComponent},
   {path: 'pokedex', canActivate: [AuthService], component: PokedexComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

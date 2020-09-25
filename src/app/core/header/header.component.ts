@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import {Router} from "@angular/router";
+import { AuthService } from '../http/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,17 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Input() sidenav: MatSidenav;
+
+  constructor(private router: Router,
+              public authService: AuthService) { }
 
   ngOnInit() {
+    console.log(this.sidenav);
+  }
+
+  public toggleSidenav() {
+    this.sidenav.toggle();
   }
 
 }

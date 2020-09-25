@@ -1,5 +1,45 @@
-<app-header></app-header>
-<main class="main">
-  <router-outlet></router-outlet>
-</main>
-<app-footer></app-footer>
+<mat-sidenav-container class="wrapper">
+  <mat-sidenav #sidenav mode="over">
+    <span class="sidenav__header">PokeMENU</span>
+    <div class="app__buttonNav">
+      <button class="menu-option" *ngIf="!this.authService.isLogged" color="accent" mat-stroked-button
+        routerLinkActive="active" [routerLink]="['/register']">
+        <mat-icon>vpn_key</mat-icon>
+        Register
+      </button>
+      <button class="menu-option" *ngIf="!this.authService.isLogged" color="accent" mat-stroked-button
+        routerLinkActive="active" [routerLink]="['/login']">
+        <mat-icon>account_circle</mat-icon>
+        Log in
+      </button>
+      <button class="menu-option" *ngIf="this.authService.isLogged" color="accent" mat-stroked-button
+        routerLinkActive="active" [routerLink]="['/pokedex']">
+        <mat-icon>supervisor_account</mat-icon>
+        Users
+      </button>
+      <button class="menu-option" *ngIf="this.authService.isLogged" color="accent" mat-stroked-button
+        routerLinkActive="active" [routerLink]="['/pokedex']">
+        <mat-icon>stars</mat-icon>
+        Pokedex
+      </button>
+      <button class="menu-option" *ngIf="this.authService.isLogged" color="accent" mat-stroked-button
+         (click)="this.authService.logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Log out
+      </button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header [sidenav]="sidenav"></app-header>
+    <main class="main">
+      <router-outlet></router-outlet>
+    </main>
+
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)"
+  template="<img style='height: 100vh; width: 100vw' src='https://media.giphy.com/media/zkMri4yiJ3Mdy/giphy.gif'/>">
+</ngx-spinner>
