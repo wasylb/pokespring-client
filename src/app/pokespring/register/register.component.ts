@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit {
                               this.fgRegister.get('visibleName').value
     ).subscribe(statusData => {
       console.log(statusData);
+    }, error => {
+      console.log(error);
     });
     return true;
   }

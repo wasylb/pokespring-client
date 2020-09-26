@@ -16,7 +16,7 @@ export class PokemonService {
   public getAllPokemons(): Observable<Pokemon[]> {
     const allPokemonsUrl = '/pokemons/';
     return this.httpClient.get<Pokemon[]>(environment.apiUrl.concat(allPokemonsUrl), {headers: {
-      'Authorization': `Bearer ${this.authService.activeUser.token}`
+      Authorization: `Bearer ${this.authService.activeUser.token}`
     }});
   }
 }

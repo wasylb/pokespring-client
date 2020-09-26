@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NotAuthorizedComponent } from './not-authorized.component';
 
@@ -8,6 +10,10 @@ describe('NotAuthorizedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MatIconModule,
+        RouterTestingModule
+      ],
       declarations: [ NotAuthorizedComponent ]
     })
     .compileComponents();
